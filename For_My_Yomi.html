@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Yomi💖</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4, #fbc2eb);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+            max-width: 90%;
+        }
+        h1 {
+            font-size: 50px;
+            color: #ffdde1;
+            text-shadow: 2px 2px 5px #ff4d6d;
+        }
+        p {
+            font-size: 22px;
+            line-height: 1.8;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        button {
+            background: #ff4d6d;
+            color: #fff;
+            border: none;
+            padding: 12px 35px;
+            font-size: 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background: #ff2e63;
+            transform: scale(1.1);
+        }
+        .heart {
+            font-size: 80px;
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>For My Yomi💖</h1>
+        <p>Press the buttons below and find out what happens!</p>
+        
+        <div class="buttons">
+            <button onclick="showMessage('You are awesome! 🔥')">🔥 Click Me!</button>
+            <button onclick="showMessage('HEHEHE MISSHU! ✨')">✨ Power!
+</button>
+            <button onclick="showMessage('Surii na agad kung mabaduyan ka 💥')">💥 Boom!
+</button>
+            <button onclick="showMessage('nyenye 👻')">👻 Keep Going!
+</button>
+            <button onclick="showMessage('WoooOOoosh! 🕊️')">🕊️ MWA!
+</button>
+        </div>
+
+        <div id="surprise" class="hidden">
+            <p class="heart">🔥🔥🔥</p>
+            <p>You’re unstoppable. Keep going strong! 💪</p>
+        </div>
+
+        <button onclick="showSurprise()">✨ Final Reveal!</button>
+    </div>
+
+    <script>
+        function showMessage(message) {
+            alert(message);
+        }
+
+        function showSurprise() {
+            const surprise = document.getElementById('surprise');
+            surprise.classList.remove('hidden');
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
